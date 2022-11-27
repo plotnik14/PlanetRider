@@ -7,8 +7,6 @@ namespace PlanetRider
         [SerializeField] private float _driveSpeed;
         [SerializeField] private float _turnSpeed;
 
-        private float _orientationSpeed = 1f;
-        
         private Vector2 _direction;
         private Rigidbody _rigidbody;
 
