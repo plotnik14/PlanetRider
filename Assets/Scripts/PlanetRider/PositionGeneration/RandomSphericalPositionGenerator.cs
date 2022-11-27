@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace DefaultNamespace
+namespace PlanetRider.PositionGeneration
 {
     public class RandomSphericalPositionGenerator : PositionGenerationStrategy
     {

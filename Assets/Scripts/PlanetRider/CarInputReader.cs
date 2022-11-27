@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace DefaultNamespace
+namespace PlanetRider
 {
     public class CarInputReader : MonoBehaviour
     {

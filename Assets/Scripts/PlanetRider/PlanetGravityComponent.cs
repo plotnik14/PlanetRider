@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace PlanetRider
 {
     [RequireComponent(typeof(Collider))]
     public class PlanetGravityComponent : MonoBehaviour

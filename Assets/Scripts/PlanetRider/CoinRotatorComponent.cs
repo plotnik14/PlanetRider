@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace PlanetRider
 {
     public class CoinRotatorComponent : MonoBehaviour
     {

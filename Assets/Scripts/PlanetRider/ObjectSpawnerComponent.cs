@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using PlanetRider.PositionGeneration;
+using UnityEngine;
 
-
-namespace DefaultNamespace
+namespace PlanetRider
 {
     public class ObjectSpawnerComponent : MonoBehaviour
     {

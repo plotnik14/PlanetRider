@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace PlanetRider.PositionGeneration
 {
     public abstract class PositionGenerationStrategy : MonoBehaviour
     {
