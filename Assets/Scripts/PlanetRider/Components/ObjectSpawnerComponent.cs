@@ -1,25 +1,29 @@
-﻿using PlanetRider.PositionGeneration;
+﻿using PlanetRider.Generators.PositionGeneration;
+using PlanetRider.Rotators;
+using PlanetRider.Utils;
 using UnityEngine;
 
-namespace PlanetRider
+namespace PlanetRider.Components
 {
     public class ObjectSpawnerComponent : MonoBehaviour
     {
         [SerializeField] private GameObject _prefab;
 
         private PositionGenerationStrategy _positionGenerator;
+        private ObjectRotator _rotator;
 
         private void Awake()
         {
             _positionGenerator = GetComponent<PositionGenerationStrategy>();
+            _rotator = GetComponent<ObjectRotator>();
         }
 
         [ContextMenu("Spawn one")]
         public void Spawn()
         {
             var position = _positionGenerator.GeneratePosition();
-            Instantiate(_prefab, position, Quaternion.identity);
-                
+            var instance = SpawnUtils.SpawnObject(_prefab, position, Quaternion.identity);
+             _rotator.Rotate(instance.transform);
         }
         
         [ContextMenu("Spawn 1000")]

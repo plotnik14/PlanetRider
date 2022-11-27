@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PlanetRider
+namespace PlanetRider.Input
 {
     public class CarInputReader : MonoBehaviour
     {
-        private CarController _car;
+        private Car _car;
 
         private void Awake()
         {
-            _car = GetComponent<CarController>();
+            _car = GetComponent<Car>();
         }
 
         public void OnMove(InputAction.CallbackContext context)

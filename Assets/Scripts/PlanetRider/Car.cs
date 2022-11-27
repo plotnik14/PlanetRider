@@ -2,7 +2,7 @@
 
 namespace PlanetRider
 {
-    public class CarController : MonoBehaviour
+    public class Car : MonoBehaviour
     {
         [SerializeField] private float _driveSpeed;
         [SerializeField] private float _turnSpeed;

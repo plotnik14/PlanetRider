@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 1234186162}
   - component: {fileID: 1234186163}
   - component: {fileID: 1234186164}
+  - component: {fileID: 1234186165}
   m_Layer: 6
   m_Name: CoinSpawner
   m_TagString: Untagged
@@ -648,6 +649,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sphereRadius: 1.05
+--- !u!114 &1234186165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234186161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1a7e3cc6d84d3e9ebcdfb4c08566e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gravityCenter: {fileID: 1685453996}
 --- !u!1 &1685453992
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +674,7 @@ GameObject:
   - component: {fileID: 1685453995}
   - component: {fileID: 1685453994}
   - component: {fileID: 1685453993}
+  - component: {fileID: 1685453997}
   m_Layer: 6
   m_Name: Planet
   m_TagString: Untagged
@@ -747,6 +762,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685453997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685453992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ebc1dfd5cb4974972b65dbc650359e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinSpawner: {fileID: 1234186163}
+  _spawnCooldown:
+    _time: 1
 --- !u!1 &2121677630
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _driveSpeed: 3
   _turnSpeed: 5
-  _rotationSpeed: 50
 --- !u!114 &2121677639
 MonoBehaviour:
   m_ObjectHideFlags: 0

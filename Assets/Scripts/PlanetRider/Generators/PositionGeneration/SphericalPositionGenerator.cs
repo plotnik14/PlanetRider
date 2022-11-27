@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace PlanetRider.PositionGeneration
+namespace PlanetRider.Generators.PositionGeneration
 {
-    public class RandomSphericalPositionGenerator : PositionGenerationStrategy
+    public class SphericalPositionGenerator : PositionGenerationStrategy
     {
         [SerializeField] private float _sphereRadius = 1f;
         
