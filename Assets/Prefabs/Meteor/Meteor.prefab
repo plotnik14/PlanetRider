@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 8083796223187293604}
   - component: {fileID: 8083796223187293601}
   - component: {fileID: 8083796223187293602}
-  - component: {fileID: 835930322}
-  - component: {fileID: 835930321}
   - component: {fileID: 1095378089}
   m_Layer: 8
   m_Name: Meteor
@@ -174,49 +172,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &835930322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083796223187293595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d73c24403ad4c37ba1885b36daccc47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  _onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 835930321}
-        m_TargetAssemblyTypeName: PlanetRider.Components.AddCoinsComponent, Assembly-CSharp
-        m_MethodName: AddCoins
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &835930321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083796223187293595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a506ed3dccef494e8ae93729069cd07e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _amount: -1000
 --- !u!114 &1095378089
 MonoBehaviour:
   m_ObjectHideFlags: 0

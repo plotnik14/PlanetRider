@@ -36,5 +36,10 @@ namespace PlanetRider
             var turnDirection = _direction.x * _direction.y;
             transform.rotation *= Quaternion.AngleAxis(_turnSpeed * turnDirection, Vector3.up);
         }
+
+        public void Stop()
+        {
+            _direction = Vector2.zero;
+        }
     }
 }
