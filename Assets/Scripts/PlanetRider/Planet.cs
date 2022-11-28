@@ -7,11 +7,11 @@ namespace PlanetRider
     public class Planet : MonoBehaviour
     {
         [Header("Coins")]
-        [SerializeField] private ObjectSpawnerComponent _coinSpawner;
+        [SerializeField] private ConfigurableSpawnComponent _coinSpawner;
         [SerializeField] private Cooldown _coinSpawnCooldown;
         
         [Header("Meteors")]
-        [SerializeField] private ObjectSpawnerComponent _meteorSpawner;
+        [SerializeField] private ConfigurableSpawnComponent _meteorSpawner;
         [SerializeField] private Cooldown _meteorSpawnCooldown;
 
         private void Update()

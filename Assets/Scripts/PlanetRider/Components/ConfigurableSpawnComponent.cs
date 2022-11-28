@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace PlanetRider.Components
 {
-    public class ObjectSpawnerComponent : MonoBehaviour
+    public class ConfigurableSpawnComponent : MonoBehaviour
     {
         [SerializeField] private GameObject _prefab;
 
