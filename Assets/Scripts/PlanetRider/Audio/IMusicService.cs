@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlanetRider
+namespace PlanetRider.Audio
 {
     public interface IMusicService
     {

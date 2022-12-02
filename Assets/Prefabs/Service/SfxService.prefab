@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3291692407479913257}
   - component: {fileID: 3291692407479913254}
-  - component: {fileID: 8476856277571070302}
+  - component: {fileID: -3688807440182118538}
   m_Layer: 0
-  m_Name: MusicService
+  m_Name: SfxService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8476856277571070302
+--- !u!114 &-3688807440182118538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,6 +138,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3291692407479913255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed0ac5ca9fb4a7e8aad1e996b8a98fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 411f8a34b84d473484cd7e7916d3a711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

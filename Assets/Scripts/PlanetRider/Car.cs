@@ -1,5 +1,7 @@
 ﻿using System;
+using PlanetRider.Audio;
 using PlanetRider.Components;
+using PlanetRider.Components.Audio;
 using PlanetRider.Inventory;
 using UnityEngine;
 using Zenject;
@@ -12,11 +14,12 @@ namespace PlanetRider
         [SerializeField] private float _turnSpeed;
         [SerializeField] private float _fuelConsumption;
         [SerializeField] private AudioClip _engineSound;
+        [SerializeField] private PlaySoundComponent _playSoundComponent;
 
         private Vector2 _direction;
         private Rigidbody _rigidbody;
 
-        private IAudioService _audioService;
+        private ISfxService _sfxService;
         private IInventoryService _inventory;
 
         private GameOverComponent _gameOverComponent;
@@ -24,10 +27,10 @@ namespace PlanetRider
         private bool _hasNoFuel;
         
         [Inject]
-        private void Construct(IAudioService audioService, IInventoryService inventory)
+        private void Construct(IInventoryService inventory, ISfxService sfxService)
         {
-            _audioService = audioService;
             _inventory = inventory;
+            _sfxService = sfxService;
         }
         
         private void Awake()
@@ -38,7 +41,7 @@ namespace PlanetRider
 
         private void Start()
         {
-            // _audioService.Play(_engineSound);
+            _playSoundComponent.Play(_engineSound);
 
             _inventory.OnFuelRanOut += OnFuelRanOut;
 

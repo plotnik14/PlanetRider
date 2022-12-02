@@ -3,7 +3,7 @@
 namespace PlanetRider.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class MusicService : MonoBehaviour, IMusicService
+    public class SfxService : MonoBehaviour, ISfxService
     {
         private AudioSource _source;
 
@@ -11,11 +11,10 @@ namespace PlanetRider.Audio
         {
             _source = GetComponent<AudioSource>();
         }
-
-        public void Play(AudioClip audioClip)
+        
+        public void PlayOneShot(AudioClip clip)
         {
-            _source.clip = audioClip;
-            _source.Play();
+            _source.PlayOneShot(clip);
         }
     }
 }

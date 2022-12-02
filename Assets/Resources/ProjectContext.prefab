@@ -75,3 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _musicServicePrefab: {fileID: 3291692407479913255, guid: 57e4ab78cdd49c649aca09acb6e841d7, type: 3}
+  _sfxServicePrefab: {fileID: 3291692407479913255, guid: 0127bb7eb72c2ba49940d257b0ec7189, type: 3}

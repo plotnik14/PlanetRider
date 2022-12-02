@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace PlanetRider.Audio
+namespace PlanetRider.Components.Audio
 {
     [RequireComponent(typeof(AudioSource))]
-    public class MusicService : MonoBehaviour, IMusicService
+    public class PlaySoundComponent : MonoBehaviour
     {
         private AudioSource _source;
 
@@ -12,6 +12,11 @@ namespace PlanetRider.Audio
             _source = GetComponent<AudioSource>();
         }
 
+        public void PlayOneShot(AudioClip clip)
+        {
+            _source.PlayOneShot(clip);
+        }
+        
         public void Play(AudioClip audioClip)
         {
             _source.clip = audioClip;
