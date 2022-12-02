@@ -1,7 +1,8 @@
 ﻿using PlanetRider.Generators.PositionGeneration;
+using PlanetRider.Infrastructure.Factories;
 using PlanetRider.Rotators;
-using PlanetRider.Utils;
 using UnityEngine;
+using Zenject;
 
 namespace PlanetRider.Components
 {
@@ -12,6 +13,14 @@ namespace PlanetRider.Components
         private PositionGenerationStrategy _positionGenerator;
         private ObjectRotator _rotator;
 
+        private IObjectFactory _objectFactory;
+
+        [Inject]
+        private void Construct(IObjectFactory objectFactory)
+        {
+            _objectFactory = objectFactory;
+        }
+        
         private void Awake()
         {
             _positionGenerator = GetComponent<PositionGenerationStrategy>();
@@ -22,7 +31,7 @@ namespace PlanetRider.Components
         public void Spawn()
         {
             var position = _positionGenerator.GeneratePosition();
-            var instance = SpawnUtils.SpawnObject(_prefab, position, Quaternion.identity);
+            var instance = _objectFactory.Create(_prefab, position, Quaternion.identity);
              _rotator.Rotate(instance.transform);
         }
         

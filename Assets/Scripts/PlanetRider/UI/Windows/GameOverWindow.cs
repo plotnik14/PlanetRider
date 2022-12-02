@@ -1,15 +1,37 @@
-﻿using UnityEngine;
+﻿using PlanetRider.Inventory;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace PlanetRider.UI.Windows
 {
     public class GameOverWindow : MonoBehaviour
     {
-        public void Restart()
+        private IInventoryService _inventory;
+
+        [Inject]
+        private void Construct(IInventoryService inventory)
         {
-            // ToDo rework
-            SceneManager.LoadScene(0);
-            GameSession.Instance.Coins = 0;
+            _inventory = inventory;
+        }
+
+        public void OnRestart()
+        {
+            _inventory.ResetValues();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+            
+            // ToDO move to where?
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+        }
+
+        public void OnExit()
+        {
+            Application.Quit();
+            
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
     }
 }

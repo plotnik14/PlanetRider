@@ -1,17 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace PlanetRider.Components
+namespace PlanetRider.Components.ColliderTriggers
 {
-    public class EnterTriggerComponent : MonoBehaviour
+    public class EnterCollisionComponent : MonoBehaviour
     {
         [SerializeField] private LayerMask _layerMask = ~0;
         [SerializeField] private UnityEvent _onTrigger;
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
-            if (IsTouchingLayer(other.gameObject.layer, _layerMask))
+            if (IsTouchingLayer(collision.gameObject.layer, _layerMask))
                 _onTrigger?.Invoke();
         }
 

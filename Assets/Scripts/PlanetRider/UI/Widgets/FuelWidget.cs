@@ -6,9 +6,9 @@ using Zenject;
 
 namespace PlanetRider.UI.Widgets
 {
-    public class CoinsWidget : MonoBehaviour
+    public class FuelWidget : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _coinsCounter;
+        [SerializeField] private TMP_Text _fuelCounter;
 
         private IInventoryService _inventory;
 
@@ -20,9 +20,9 @@ namespace PlanetRider.UI.Widgets
         
         private void Start()
         {
-            _coinsCounter.text = _inventory.Coins.Value.ToString();
+            _fuelCounter.text = _inventory.Fuel.Value.ToString("0.0");
             
-            _inventory.Coins.Subscribe(value => _coinsCounter.text = value.ToString());
+            _inventory.Fuel.Subscribe(value => _fuelCounter.text = value.ToString("0.0"));
         }
     }
 }

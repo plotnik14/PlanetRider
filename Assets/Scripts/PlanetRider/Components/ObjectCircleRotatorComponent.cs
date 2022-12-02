@@ -2,7 +2,7 @@
 
 namespace PlanetRider.Components
 {
-    public class CoinRotatorComponent : MonoBehaviour
+    public class ObjectCircleRotatorComponent : MonoBehaviour
     {
         [SerializeField] private float _rotationSpeed;
 
