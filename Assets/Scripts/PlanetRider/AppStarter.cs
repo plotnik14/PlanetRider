@@ -1,6 +1,6 @@
 ﻿using PlanetRider.Audio;
+using PlanetRider.LevelManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace PlanetRider
@@ -11,18 +11,19 @@ namespace PlanetRider
         [SerializeField] private AudioClip _musicClip;
 
         private IMusicService _musicService;
+        private ILevelLoader _levelLoader;
 
         [Inject]
-        private void Construct(IMusicService musicService)
+        private void Construct(IMusicService musicService, ILevelLoader levelLoader)
         {
             _musicService = musicService;
+            _levelLoader = levelLoader;
         }
         
         private void Start()
         {
             _musicService.Play(_musicClip);
-            
-            SceneManager.LoadScene(_levelToLoad);
+            _levelLoader.LoadLevel(_levelToLoad, loadHud: false);
         }
     }
 }

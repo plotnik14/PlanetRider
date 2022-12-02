@@ -1,4 +1,5 @@
 ﻿using PlanetRider.Inventory;
+using PlanetRider.LevelManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -8,21 +9,20 @@ namespace PlanetRider.UI.Windows
     public class GameOverWindow : MonoBehaviour
     {
         private IInventoryService _inventory;
-
+        private ILevelLoader _levelLoader;
+        
         [Inject]
-        private void Construct(IInventoryService inventory)
+        private void Construct(IInventoryService inventory, ILevelLoader levelLoader)
         {
             _inventory = inventory;
+            _levelLoader = levelLoader;
         }
 
         public void OnRestart()
         {
             _inventory.ResetValues();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
-            
-            // ToDO move to where?
-            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+            _levelLoader.LoadLevel(SceneManager.GetActiveScene().name);
         }
 
         public void OnExit()

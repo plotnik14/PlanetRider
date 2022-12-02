@@ -1,19 +1,24 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using PlanetRider.LevelManagement;
+using UnityEngine;
+using Zenject;
 
 namespace PlanetRider.UI.Windows
 {
     public class MainMenuWindow : MonoBehaviour
     {
         [SerializeField] private string _levelToLoad;
-        [SerializeField] private string _hudSceneName;
+
+        private ILevelLoader _levelLoader;
+
+        [Inject]
+        private void Construct(ILevelLoader levelLoader)
+        {
+            _levelLoader = levelLoader;
+        }
         
         public void OnStart()
         {
-            SceneManager.LoadScene(_levelToLoad);
-            
-            // ToDO move to where?
-            SceneManager.LoadScene(_hudSceneName, LoadSceneMode.Additive);
+            _levelLoader.LoadLevel(_levelToLoad);
         }
 
         public void OnExit()
