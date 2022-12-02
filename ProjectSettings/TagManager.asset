@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MainUICanvas
+  - MusicAudioSource
   layers:
   - Default
   - TransparentFX
