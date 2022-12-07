@@ -14,19 +14,15 @@ namespace PlanetRider.Input
 
         public void OnMove(InputAction.CallbackContext context)
         {
-            // Always ride mode
-            
             if (context.performed)
             {
-                var direction = context.ReadValue<Vector2>();
-                direction.y = 1;
-                
+                var direction = context.ReadValue<float>();
                 _car.SetDirection(direction);
             }
 
             if (context.canceled)
             {
-                _car.SetDirection(Vector2.up);
+                _car.SetDirection(0);
             }
         }
     }

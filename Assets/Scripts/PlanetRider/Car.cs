@@ -16,7 +16,7 @@ namespace PlanetRider
         [SerializeField] private AudioClip _engineSound;
         [SerializeField] private PlaySoundComponent _playSoundComponent;
 
-        private Vector2 _direction;
+        private float _direction;
         private Rigidbody _rigidbody;
 
         private ISfxService _sfxService;
@@ -25,6 +25,7 @@ namespace PlanetRider
         private GameOverComponent _gameOverComponent;
 
         private bool _hasNoFuel;
+        private bool _isDriving;
         
         [Inject]
         private void Construct(IInventoryService inventory, ISfxService sfxService)
@@ -42,24 +43,20 @@ namespace PlanetRider
         private void Start()
         {
             _playSoundComponent.Play(_engineSound);
-
             _inventory.OnFuelRanOut += OnFuelRanOut;
-
         }
 
         private void OnFuelRanOut()
         {
-            // ToDO stop moving!!
-            
-            
             _hasNoFuel = true;
             Stop();
             _gameOverComponent.ShowGameOverWindow();
         }
 
-        public void SetDirection(Vector2 direction)
+        public void SetDirection(float direction)
         {
             _direction = direction;
+            _isDriving = true; // ToDo create activation trigger?
         }
 
         private void Update()
@@ -82,18 +79,23 @@ namespace PlanetRider
 
         private void CalculateForwardMovement()
         {
-            _rigidbody.velocity = transform.forward * _direction.y * _driveSpeed;
+            if (!_isDriving)
+            {
+                _rigidbody.velocity = Vector3.zero;
+                return;
+            }
+
+            _rigidbody.velocity = transform.forward * _driveSpeed;
         }
 
         private void CalculateTurn()
         {
-            var turnDirection = _direction.x * _direction.y;
-            transform.rotation *= Quaternion.AngleAxis(_turnSpeed * turnDirection, Vector3.up);
+            transform.rotation *= Quaternion.AngleAxis(_turnSpeed * _direction, Vector3.up);
         }
 
         public void Stop()
         {
-            _direction = Vector2.zero;
+            _isDriving = false;
         }
     }
 }
