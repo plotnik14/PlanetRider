@@ -535,7 +535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &1266934628
 GameObject:
@@ -965,13 +965,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet
       objectReference: {fileID: 0}
-    - target: {fileID: 8362105603748439443, guid: 86a65fcd1ac6e8c40a8cc9925e80af3c, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3a24faf19df9e9b4f8697dcf6cf968a4, type: 2}
     - target: {fileID: 8362105603748439445, guid: 86a65fcd1ac6e8c40a8cc9925e80af3c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362105603748439445, guid: 86a65fcd1ac6e8c40a8cc9925e80af3c, type: 3}
       propertyPath: m_LocalPosition.x
