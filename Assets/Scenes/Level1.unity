@@ -904,10 +904,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 858468012, guid: ddde07fe76a288a46891893ae4f675a0, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7189119908705475084, guid: ddde07fe76a288a46891893ae4f675a0, type: 3}
       propertyPath: m_Name
       value: Car
@@ -922,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7189119908705475185, guid: ddde07fe76a288a46891893ae4f675a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.035
+      value: 0.9935
       objectReference: {fileID: 0}
     - target: {fileID: 7189119908705475185, guid: ddde07fe76a288a46891893ae4f675a0, type: 3}
       propertyPath: m_LocalPosition.z
