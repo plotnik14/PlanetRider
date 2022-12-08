@@ -35,5 +35,22 @@ namespace PlanetRider.Inventory
             Coins.Value = CoinsDefault;
             Fuel.Value = FuelDefault;
         }
+
+        public void AddItem(InventoryItemType type, int amount)
+        {
+            // Rework to dictionary if new types are introduced
+            
+            switch (type)
+            {
+                case InventoryItemType.Coin:
+                    Coins.Value += amount;
+                    break;
+                case InventoryItemType.Fuel:
+                    Fuel.Value += amount;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+        }
     }
 }

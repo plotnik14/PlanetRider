@@ -11,5 +11,7 @@ namespace PlanetRider.Inventory
         event Action OnFuelRanOut; 
 
         void ResetValues();
+
+        void AddItem(InventoryItemType type, int amount);
     }
 }
