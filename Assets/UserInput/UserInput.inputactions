@@ -6,7 +6,7 @@
             "id": "8c15e7b8-4842-4bcf-a88e-13d131fa7c38",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "Movement",
                     "type": "Value",
                     "id": "9cd35f0d-72ee-4aa2-9ae0-8463458ef95b",
                     "expectedControlType": "Axis",
@@ -17,13 +17,13 @@
             ],
             "bindings": [
                 {
-                    "name": "1D Axis",
+                    "name": "Keyboard Arrows",
                     "id": "52032882-3047-4c62-a4b1-99f0bd84f41c",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -34,7 +34,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -45,7 +45,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Touchscreen",
+                    "id": "fba2c838-1fa9-4574-8811-19fc62e49833",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c037de9d-0e29-4081-9b12-5b97a4232221",
+                    "path": "<Touchscreen>/delta/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "6856c8c2-2eed-45a7-9a2f-3f5fac3b34d4",
+                    "path": "<Touchscreen>/delta/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
