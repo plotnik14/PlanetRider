@@ -1,4 +1,5 @@
-﻿using PlanetRider.Audio;
+﻿using System;
+using PlanetRider.Audio;
 using PlanetRider.Components.Audio;
 using PlanetRider.Components.ColliderTriggers;
 using PlanetRider.Components.GameOver;
@@ -110,6 +111,12 @@ namespace PlanetRider
         public void StopCar()
         {
             _isDriving = false;
+        }
+
+        private void OnDestroy()
+        {
+            _inventory.OnFuelRanOut -= OnFuelRanOut;
+            _collisionCheck.OnTrigger -= OnCollision;
         }
     }
 }

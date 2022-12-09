@@ -107,9 +107,9 @@ GameObject:
   - component: {fileID: 8083796223187293606}
   - component: {fileID: 8083796223187293605}
   - component: {fileID: 8083796223187293604}
-  - component: {fileID: 8083796223187293601}
   - component: {fileID: 8083796223187293602}
   - component: {fileID: 1095378089}
+  - component: {fileID: 8535700165346741207}
   m_Layer: 8
   m_Name: Meteor
   m_TagString: Untagged
@@ -212,18 +212,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8083796223187293601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083796223187293595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00aa252fbc2e441fbba6e00bb37d8f8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8083796223187293602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,34 +227,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1095378089}
-        m_TargetAssemblyTypeName: PlanetRider.Components.SimpleSpawnComponent, Assembly-CSharp
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8083796223187293601}
-        m_TargetAssemblyTypeName: PlanetRider.Components.DestroyObjectComponent,
-          Assembly-CSharp
-        m_MethodName: DestroySelf
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1095378089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,3 +241,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4620191011133485090, guid: 5d43d217939fdeb44befd54a378fb4ef, type: 3}
   _transform: {fileID: 8083796223187293600}
+--- !u!114 &8535700165346741207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8083796223187293595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880ff8e55bca4bd5b0bcabb197ba94cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
