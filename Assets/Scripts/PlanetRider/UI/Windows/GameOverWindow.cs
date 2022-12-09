@@ -1,5 +1,6 @@
 ﻿using PlanetRider.Inventory;
 using PlanetRider.LevelManagement;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -8,6 +9,8 @@ namespace PlanetRider.UI.Windows
 {
     public class GameOverWindow : MonoBehaviour
     {
+        [SerializeField] private TMP_Text _gameOverReason;
+        
         private IInventoryService _inventory;
         private ILevelLoader _levelLoader;
         
@@ -16,6 +19,11 @@ namespace PlanetRider.UI.Windows
         {
             _inventory = inventory;
             _levelLoader = levelLoader;
+        }
+
+        public void SetGameOverReason(string text)
+        {
+            _gameOverReason.text = text;
         }
 
         public void OnRestart()
