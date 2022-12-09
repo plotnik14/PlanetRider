@@ -1,10 +1,10 @@
-﻿using PlanetRider.Generators.PositionGeneration;
+﻿using PlanetRider.Components.Rotators;
+using PlanetRider.Generators.PositionGeneration;
 using PlanetRider.Infrastructure.Factories;
-using PlanetRider.Rotators;
 using UnityEngine;
 using Zenject;
 
-namespace PlanetRider.Components
+namespace PlanetRider.Components.Spawn
 {
     public class ConfigurableSpawnComponent : MonoBehaviour
     {

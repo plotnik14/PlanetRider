@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlanetRider.Rotators
+namespace PlanetRider.Components.Rotators
 {
     public abstract class ObjectRotator : MonoBehaviour
     {

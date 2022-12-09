@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlanetRider.Components
+namespace PlanetRider.Components.Rotators
 {
     public class EditorRotateToTargetComponent : MonoBehaviour
     {

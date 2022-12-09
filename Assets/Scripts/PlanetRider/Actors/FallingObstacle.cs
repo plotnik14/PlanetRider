@@ -1,8 +1,8 @@
-﻿using PlanetRider.Components;
-using PlanetRider.Components.ColliderTriggers;
+﻿using PlanetRider.Components.ColliderTriggers;
+using PlanetRider.Components.Spawn;
 using UnityEngine;
 
-namespace PlanetRider
+namespace PlanetRider.Actors
 {
     public class FallingObstacle : MonoBehaviour
     {

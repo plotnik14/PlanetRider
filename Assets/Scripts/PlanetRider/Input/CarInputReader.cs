@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PlanetRider.Actors;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PlanetRider.Input

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace PlanetRider.Components
+namespace PlanetRider.Components.Spawn
 {
     public class SimpleSpawnComponent : MonoBehaviour
     {

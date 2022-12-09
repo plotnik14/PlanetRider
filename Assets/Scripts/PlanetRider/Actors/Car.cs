@@ -1,5 +1,4 @@
-﻿using System;
-using PlanetRider.Audio;
+﻿using PlanetRider.Audio;
 using PlanetRider.Components.Audio;
 using PlanetRider.Components.ColliderTriggers;
 using PlanetRider.Components.GameOver;
@@ -8,7 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace PlanetRider
+namespace PlanetRider.Actors
 {
     public class Car : MonoBehaviour
     {

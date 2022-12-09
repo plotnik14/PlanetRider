@@ -1,8 +1,8 @@
-﻿using PlanetRider.Components;
+﻿using PlanetRider.Components.Spawn;
 using PlanetRider.Utils;
 using UnityEngine;
 
-namespace PlanetRider
+namespace PlanetRider.Actors
 {
     public class Planet : MonoBehaviour
     {
