@@ -1,9 +1,10 @@
-﻿using System;
-using PlanetRider.Audio;
-using PlanetRider.Components;
+﻿using PlanetRider.Audio;
 using PlanetRider.Components.Audio;
+using PlanetRider.Components.ColliderTriggers;
+using PlanetRider.Components.GameOver;
 using PlanetRider.Inventory;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace PlanetRider
@@ -23,6 +24,8 @@ namespace PlanetRider
         private IInventoryService _inventory;
 
         private GameOverComponent _gameOverComponent;
+        private CollisionCheckComponent _collisionCheck;
+        private PlayerInput _playerInput;
 
         private bool _hasNoFuel;
         private bool _isDriving;
@@ -38,19 +41,30 @@ namespace PlanetRider
         {
             _rigidbody = GetComponent<Rigidbody>(); ;
             _gameOverComponent = GetComponent<GameOverComponent>();
+            _collisionCheck = GetComponent<CollisionCheckComponent>();
+            _playerInput = GetComponent<PlayerInput>();
         }
 
         private void Start()
         {
             _playSoundComponent.Play(_engineSound);
             _inventory.OnFuelRanOut += OnFuelRanOut;
+            _collisionCheck.OnTrigger += OnCollision;
+        }
+
+        private void OnCollision(GameObject go)
+        {
+            _playerInput.enabled = false;
+            StopCar();
+            _gameOverComponent.ShowGameOverWindow(GameOverType.Crash);
         }
 
         private void OnFuelRanOut()
         {
+            _playerInput.enabled = false;
             _hasNoFuel = true;
-            Stop();
-            _gameOverComponent.ShowGameOverWindow();
+            StopCar();
+            _gameOverComponent.ShowGameOverWindow(GameOverType.FuelRanOut);
         }
 
         public void SetDirection(float direction)
@@ -93,7 +107,7 @@ namespace PlanetRider
             transform.rotation *= Quaternion.AngleAxis(_turnSpeed * _direction, Vector3.up);
         }
 
-        public void Stop()
+        public void StopCar()
         {
             _isDriving = false;
         }
