@@ -20,24 +20,17 @@ namespace PlanetRider.Actors
 
         private void Update()
         {
-            // Todo rework
-            
-            if (_coinSpawnCooldown.IsReady)
+            SpawnIfReady(_coinSpawner, _coinSpawnCooldown);
+            SpawnIfReady(_meteorSpawner, _meteorSpawnCooldown);
+            SpawnIfReady(_fuelSpawner, _fuelSpawnCooldown);
+        }
+
+        private void SpawnIfReady(ConfigurableSpawnComponent spawner, Cooldown cooldown)
+        {
+            if (cooldown.IsReady)
             {
-                _coinSpawner.Spawn();
-                _coinSpawnCooldown.Reset();
-            }
-            
-            if (_meteorSpawnCooldown.IsReady)
-            {
-                _meteorSpawner.Spawn();
-                _meteorSpawnCooldown.Reset();
-            }
-            
-            if (_fuelSpawnCooldown.IsReady)
-            {
-                _fuelSpawner.Spawn();
-                _fuelSpawnCooldown.Reset();
+                spawner.Spawn();
+                cooldown.Reset();
             }
         }
     }
