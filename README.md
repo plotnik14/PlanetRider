@@ -6,7 +6,7 @@ You are on a very small planet in a car that is almost out of fuel. But you need
 This game is inspired by Brackeys video [Making of SHRINKING PLANET](https://youtu.be/XldCg9sQYx0). I wanted to create something simular to it and play around with Zenject and UniRX.
 
 ### Download
-[PlanetRider.apk](TODO)
+[PlanetRider.apk](Download/PlanetRider.apk)
 
 ### Gameplay Video
 [YouTube](https://youtu.be/4pgQJndekcA)
