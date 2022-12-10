@@ -12,10 +12,7 @@ This game is inspired by Brackeys video [Making of SHRINKING PLANET](https://you
 [YouTube](https://youtu.be/4pgQJndekcA)
   
 ### Gameplay Screenshorts
-![MainMenu](Pictures/MainMenu.png)
-![Gameplay1](Pictures/Gameplay1.png)
-![Gameplay2](Pictures/Gameplay2.png)
-![GameOver](Pictures/GameOver.png)
+<img src="Pictures/MainMenu.png" height="400"> <img src="Pictures/Gameplay1.png" height="400"> <img src="Pictures/Gameplay2.png" height="400"> <img src="Pictures/GameOver.png" height="400">
 
 ### Used Assets
 Music: https://ansimuz.itch.io/action-music-pack-1  
