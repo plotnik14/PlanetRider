@@ -14,12 +14,17 @@ namespace PlanetRider.Actors
         [SerializeField] private float _driveSpeed;
         [SerializeField] private float _turnSpeed;
         [SerializeField] private float _fuelConsumption;
+        
+        [Space][Header("Audio")]
+        [SerializeField] private PlaySoundComponent _playEngineSound;
         [SerializeField] private AudioClip _engineSound;
-        [SerializeField] private PlaySoundComponent _playSoundComponent;
+        [SerializeField] private AudioClip _fuelRanOut;
+        [SerializeField] private AudioClip _carCrash;
 
         private float _direction;
         private Rigidbody _rigidbody;
-
+        private bool _isDriving;
+        
         private ISfxService _sfxService;
         private IInventoryService _inventory;
 
@@ -27,9 +32,6 @@ namespace PlanetRider.Actors
         private CollisionCheckComponent _collisionCheck;
         private PlayerInput _playerInput;
 
-        private bool _hasNoFuel;
-        private bool _isDriving;
-        
         [Inject]
         private void Construct(IInventoryService inventory, ISfxService sfxService)
         {
@@ -47,30 +49,33 @@ namespace PlanetRider.Actors
 
         private void Start()
         {
-            _playSoundComponent.Play(_engineSound);
+            _playEngineSound.Play(_engineSound);
             _inventory.OnFuelRanOut += OnFuelRanOut;
             _collisionCheck.OnTrigger += OnCollision;
         }
 
         private void OnCollision(GameObject go)
         {
-            _playerInput.enabled = false;
-            StopCar();
-            _gameOverComponent.ShowGameOverWindow(GameOverType.Crash);
+            EndGame(GameOverType.Crash, _carCrash);
         }
 
         private void OnFuelRanOut()
         {
+            EndGame(GameOverType.FuelRanOut, _fuelRanOut);
+        }
+
+        private void /* Avengers: */ EndGame(GameOverType gameOverType, AudioClip gameOverSound)
+        {
             _playerInput.enabled = false;
-            _hasNoFuel = true;
             StopCar();
-            _gameOverComponent.ShowGameOverWindow(GameOverType.FuelRanOut);
+            _sfxService.PlayOneShot(gameOverSound);
+            _gameOverComponent.ShowGameOverWindow(gameOverType);
         }
 
         public void SetDirection(float direction)
         {
             _direction = direction;
-            _isDriving = true; // ToDo create activation trigger?
+            _isDriving = true;
         }
 
         private void Update()
@@ -80,7 +85,7 @@ namespace PlanetRider.Actors
 
         private void ConsumeFuel()
         {
-            if (_hasNoFuel) return;
+            if (!_isDriving) return;
             
             _inventory.Fuel.Value -= _fuelConsumption * Time.deltaTime;
         }
@@ -107,9 +112,10 @@ namespace PlanetRider.Actors
             transform.rotation *= Quaternion.AngleAxis(_turnSpeed * _direction, Vector3.up);
         }
 
-        public void StopCar()
+        private void StopCar()
         {
             _isDriving = false;
+            _playEngineSound.Stop();
         }
 
         private void OnDestroy()

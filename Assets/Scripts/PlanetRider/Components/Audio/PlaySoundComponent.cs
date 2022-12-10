@@ -22,5 +22,10 @@ namespace PlanetRider.Components.Audio
             _source.clip = audioClip;
             _source.Play();
         }
+
+        public void Stop()
+        {
+            _source.Stop();
+        }
     }
 }

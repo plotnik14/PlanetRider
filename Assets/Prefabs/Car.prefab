@@ -604,8 +604,10 @@ MonoBehaviour:
   _driveSpeed: 2
   _turnSpeed: 0.2
   _fuelConsumption: 1
+  _playEngineSound: {fileID: 858468011}
   _engineSound: {fileID: 8300000, guid: a4daea930c4b684439fe9ab0bbbb8727, type: 3}
-  _playSoundComponent: {fileID: 858468011}
+  _fuelRanOut: {fileID: 8300000, guid: 8b4384e536b811848af38726371a2bec, type: 3}
+  _carCrash: {fileID: 8300000, guid: a5abb73894167ee46900f44a1e1ae1a3, type: 3}
 --- !u!114 &801829830
 MonoBehaviour:
   m_ObjectHideFlags: 0
