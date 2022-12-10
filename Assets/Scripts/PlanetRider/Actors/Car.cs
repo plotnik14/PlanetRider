@@ -3,6 +3,8 @@ using PlanetRider.Components.Audio;
 using PlanetRider.Components.ColliderTriggers;
 using PlanetRider.Components.GameOver;
 using PlanetRider.Inventory;
+using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -52,6 +54,10 @@ namespace PlanetRider.Actors
             _playEngineSound.Play(_engineSound);
             _inventory.OnFuelRanOut += OnFuelRanOut;
             _collisionCheck.OnTrigger += OnCollision;
+
+            this.UpdateAsObservable()
+                .Subscribe(_ => ConsumeFuel())
+                .AddTo(this);
         }
 
         private void OnCollision(GameObject go)
@@ -76,11 +82,6 @@ namespace PlanetRider.Actors
         {
             _direction = direction;
             _isDriving = true;
-        }
-
-        private void Update()
-        {
-            ConsumeFuel();
         }
 
         private void ConsumeFuel()
