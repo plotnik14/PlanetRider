@@ -253,3 +253,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880ff8e55bca4bd5b0bcabb197ba94cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collisionSound: {fileID: 0}
