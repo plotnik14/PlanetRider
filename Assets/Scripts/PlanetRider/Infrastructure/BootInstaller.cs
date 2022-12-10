@@ -1,6 +1,7 @@
 ﻿using PlanetRider.Audio;
 using PlanetRider.Inventory;
 using PlanetRider.LevelManagement;
+using PlanetRider.Settings;
 using UnityEngine;
 using Zenject;
 
@@ -8,12 +9,10 @@ namespace PlanetRider.Infrastructure
 {
     public class BootInstaller : MonoInstaller
     {
+        [SerializeField] private AppSettings _appSettings;
         [SerializeField] private GameObject _musicServicePrefab;
         [SerializeField] private GameObject _sfxServicePrefab;
 
-        // TODO move to settings?
-        [SerializeField] private string _hudSceneName;
-        
         public override void InstallBindings()
         {
             BindAudioServices();
@@ -26,7 +25,7 @@ namespace PlanetRider.Infrastructure
             Container.Bind<ILevelLoader>()
                 .To<LevelLoader>()
                 .AsSingle()
-                .WithArguments(_hudSceneName)
+                .WithArguments(_appSettings.HudSceneName)
                 .NonLazy();
         }
 
