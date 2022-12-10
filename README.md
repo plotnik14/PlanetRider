@@ -5,9 +5,9 @@ You are on a very small planet in a car that is almost out of fuel. But you need
   
 This game is inspired by Brackeys video [Making of SHRINKING PLANET](https://youtu.be/XldCg9sQYx0). I wanted to create something simular and play around with Zenject and UniRX.
   
-Gameplay: 
+#### Gameplay video: 
   
-#### Screenshorts
+#### Gameplay screenshorts
 ![MainMenu](Pictures/MainMenu.png)
 ![Gameplay1](Pictures/Gameplay1.png)
 ![Gameplay2](Pictures/Gameplay2.png)
